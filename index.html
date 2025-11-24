@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BuyPro – Premium Amazon Deals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #020617;
+      color:#e5e7eb;
+      scroll-behavior:smooth;
+    }
+    .navbar{
+      background: rgba(2,6,23,0.9);
+      backdrop-filter: blur(18px);
+    }
+    .navbar-brand{
+      font-weight:700;
+      letter-spacing:0.04em;
+    }
+    .btn-gradient{
+      background: linear-gradient(135deg,#f97316,#facc15);
+      border:none;
+      color:#111827;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(250,204,21,0.35);
+    }
+    .btn-gradient:hover{
+      background: linear-gradient(135deg,#fb923c,#fde047);
+      color:#020617;
+    }
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      background:
+        radial-gradient(circle at top left,rgba(56,189,248,0.18),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(250,204,21,0.18),transparent 55%);
+    }
+    .badge-soft{
+      background:rgba(249,115,22,0.08);
+      border:1px solid rgba(249,115,22,0.4);
+      color:#fed7aa;
+      border-radius:999px;
+      padding:6px 14px;
+      font-size:0.8rem;
+    }
+    .glass-card{
+      background: rgba(15,23,42,0.92);
+      border:1px solid rgba(148,163,184,0.25);
+      border-radius:18px;
+      box-shadow:0 24px 60px rgba(15,23,42,0.9);
+    }
+    .section-title{
+      font-size:2rem;
+      font-weight:700;
+    }
+    .section-sub{
+      color:#9ca3af;
+    }
+    .product-card{
+      background: linear-gradient(145deg,#020617,#020617 45%,#020617 60%,#0b1120);
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,0.3);
+      overflow:hidden;
+      transform: translateY(0);
+      transition: all .3s ease;
+    }
+    .product-card:hover{
+      transform: translateY(-6px);
+      box-shadow:0 18px 40px rgba(15,23,42,0.9);
+      border-color:rgba(250,204,21,0.5);
+    }
+    .product-img{
+      height:210px;
+      object-fit:cover;
+      width:100%;
+    }
+    .price-tag{
+      color:#facc15;
+      font-weight:700;
+      font-size:1.1rem;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.5);
+      font-size:0.78rem;
+      color:#cbd5f5;
+    }
+    footer{
+      border-top:1px solid rgba(55,65,81,0.8);
+      background:#020617;
+      color:#6b7280;
+    }
+
+    /* simple fade/slide animation */
+    .reveal{
+      opacity:0;
+      transform: translateY(24px);
+      transition: all .7s ease-out;
+    }
+    .reveal.show{
+      opacity:1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">BuyPro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#top-deals">Top Deals</a></li>
+        <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      </ul>
+      <a class="btn btn-sm btn-gradient ms-lg-3 mt-2 mt-lg-0" href="#top-deals">Start Shopping</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero pt-5">
+  <div class="container pt-5">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-6 reveal">
+        <span class="badge-soft mb-3">
+          <i class="bi bi-lightning-charge-fill me-1 text-warning"></i>
+          Curated Amazon finds for smart buyers
+        </span>
+        <h1 class="display-5 fw-bold mt-2">BuyPro – Premium Picks, Zero Time Waste.</h1>
+        <p class="lead text-secondary mt-3">
+          Hand‑picked tech, study, and lifestyle products with direct Amazon links, so you spend less time searching and more time using.
+        </p>
+        <div class="d-flex flex-wrap align-items-center gap-3 mt-4">
+          <a href="#top-deals" class="btn btn-gradient btn-lg">
+            Browse Today’s Deals
+          </a>
+          <div class="d-flex flex-column small text-secondary">
+            <span><i class="bi bi-check2-circle text-success me-1"></i>No extra cost to you</span>
+            <span><i class="bi bi-shield-check text-info me-1"></i>Genuine Amazon products only</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal">
+        <div class="glass-card p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="chip"><i class="bi bi-star-fill text-warning"></i> Editor’s picks</span>
+            <span class="chip"><i class="bi bi-clock-history text-info"></i> Updated daily*</span>
+          </div>
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="product-card h-100">
+                <img src="https://via.placeholder.com/500x320?text=Headphones" class="product-img" alt="Wireless Headphones">
+                <div class="p-3">
+                  <div class="small text-warning mb-1">Top Rated</div>
+                  <h6 class="mb-1">Pro Wireless Headphones</h6>
+                  <p class="small text-secondary mb-2">Low‑latency, long battery life – perfect for study and music.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="price-tag">₹X,XXX*</span>
+                    <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="text-decoration-none small">
+                      View <i class="bi bi-arrow-up-right-square ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 d-flex flex-column gap-3">
+              <div class="product-card flex-fill">
+                <div class="p-3">
+                  <div class="small text-info mb-1">Student Essential</div>
+                  <h6 class="mb-1">LED Study Lamp</h6>
+                  <p class="small text-secondary mb-2">Eye‑friendly, adjustable brightness, perfect for late‑night prep.</p>
+                  <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="text-decoration-none small">
+                    View on Amazon
+                  </a>
+                </div>
+              </div>
+              <div class="product-card flex-fill">
+                <div class="p-3">
+                  <div class="small text-success mb-1">Best Value</div>
+                  <h6 class="mb-1">Smart Fitness Band</h6>
+                  <p class="small text-secondary mb-2">Track workouts, heart rate, and sleep without breaking the bank.</p>
+                  <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="text-decoration-none small">
+                    View on Amazon
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="small text-secondary mt-3 mb-0">
+            *Prices and availability can change anytime. Always confirm details on Amazon before purchasing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP DEALS -->
+<section id="top-deals" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4 reveal">
+      <h2 class="section-title">Today’s Top Deals</h2>
+      <p class="section-sub">
+        Premium picks across categories – every product manually selected for value, reviews, and reliability.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100">
+          <img src="https://via.placeholder.com/600x400?text=Mechanical+Keyboard" class="product-img" alt="Mechanical Keyboard">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="chip"><i class="bi bi-keyboard me-1"></i>Setup Upgrade</span>
+              <span class="small text-warning"><i class="bi bi-star-fill me-1"></i>4.5+ rating</span>
+            </div>
+            <h5 class="mb-1">Compact Mechanical Keyboard</h5>
+            <p class="small text-secondary mb-2">
+              Tactile keys, RGB options, and a compact layout ideal for coding, gaming, and productivity.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="price-tag">₹X,XXX*</span>
+              <span class="small text-secondary"><i class="bi bi-truck me-1"></i>Fast delivery</span>
+            </div>
+            <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-gradient w-100">
+              View on Amazon
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100">
+          <img src="https://via.placeholder.com/600x400?text=Study+Chair" class="product-img" alt="Ergonomic Chair">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="chip"><i class="bi bi-person-workspace me-1"></i>Study Setup</span>
+              <span class="small text-success"><i class="bi bi-activity me-1"></i>Back support</span>
+            </div>
+            <h5 class="mb-1">Ergonomic Study Chair</h5>
+            <p class="small text-secondary mb-2">
+              Adjustable height, lumbar support, and breathable mesh for long study and work sessions.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="price-tag">₹X,XXX*</span>
+              <span class="small text-secondary"><i class="bi bi-arrow-repeat me-1"></i>Popular choice</span>
+            </div>
+            <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-gradient w-100">
+              View on Amazon
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100">
+          <img src="https://via.placeholder.com/600x400?text=Noise+Cancelling+Headphones" class="product-img" alt="Noise Cancelling Headphones">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="chip"><i class="bi bi-headphones me-1"></i>Focus Mode</span>
+              <span class="small text-info"><i class="bi bi-music-note-beamed me-1"></i>Deep bass</span>
+            </div>
+            <h5 class="mb-1">Noise Cancelling Headphones</h5>
+            <p class="small text-secondary mb-2">
+              Block distractions and stay focused during classes, online lectures, or travel.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="price-tag">₹X,XXX*</span>
+              <span class="small text-secondary"><i class="bi bi-battery-full me-1"></i>Long battery</span>
+            </div>
+            <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-gradient w-100">
+              View on Amazon
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4 reveal">
+      <h2 class="section-title">Shop by Category</h2>
+      <p class="section-sub">
+        Quickly jump into curated lists based on how you use your space – study, work, or fitness.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100 p-4">
+          <h5><i class="bi bi-laptop me-2 text-info"></i>Tech & Electronics</h5>
+          <p class="small text-secondary mt-2 mb-3">
+            Laptops, tablets, headphones, keyboards, and desk accessories optimized for students and creators.
+          </p>
+          <a href="tech.html" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-outline-light">
+            View Tech Deals
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100 p-4">
+          <h5><i class="bi bi-journal-text me-2 text-warning"></i>Study & Workspace</h5>
+          <p class="small text-secondary mt-2 mb-3">
+            Desks, chairs, lamps, organisers, and essentials to build a distraction‑free study zone.
+          </p>
+          <a href="studygear.html" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-outline-light">
+            View Study Gear
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100 p-4">
+          <h5><i class="bi bi-heart-pulse me-2 text-danger"></i>Fitness & Lifestyle</h5>
+          <p class="small text-secondary mt-2 mb-3">
+            Dumbbells, resistance bands, smart bands, and accessories to balance study and health.
+          </p>
+          <a href="fitness.html" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-outline-light">
+            View Fitness Picks
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT & DISCLOSURE -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-6 reveal">
+        <h2 class="section-title">About BuyPro</h2>
+        <p class="section-sub mt-2">
+          BuyPro is a curated Amazon recommendation hub focused on high‑value, well‑reviewed products for students, creators, and professionals.
+        </p>
+        <p class="small text-secondary mt-2">
+          Every item is checked for ratings, reviews, and price‑to‑performance so you can shop faster and smarter without scrolling endlessly through search results.
+        </p>
+      </div>
+      <div class="col-lg-6 reveal">
+        <div class="glass-card p-4">
+          <h5 class="mb-2"><i class="bi bi-info-circle me-2 text-warning"></i>Affiliate Disclosure</h5>
+          <p class="small text-secondary mb-2">
+            BuyPro participates in the Amazon Associates Program. This means some links on this site are affiliate links. If you purchase through these links, BuyPro may earn a small commission at no extra cost to you.
+          </p>
+          <p class="small text-secondary mb-0">
+            Product details, prices, and availability can change at any time. Always double‑check the final information directly on Amazon before you buy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <span class="small">© <span id="year"></span> BuyPro. All rights reserved.</span>
+    <span class="small">Made with <i class="bi bi-heart-fill text-danger"></i> for smart shoppers.</span>
+  </div>
+</footer>
+
+<!-- Bootstrap JS + simple scroll reveal -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const reveals = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
+    const trigger = window.innerHeight * 0.85;
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if(top < trigger) el.classList.add('show');
+    });
+  };
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
+</body>
+</html>

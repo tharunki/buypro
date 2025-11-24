@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BuyPro – Study Gear & Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body{
+      font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      background:#020617;
+      color:#e5e7eb;
+      scroll-behavior:smooth;
+    }
+    .navbar{
+      background:rgba(2,6,23,0.95);
+      backdrop-filter:blur(18px);
+    }
+    .navbar-brand{font-weight:700;letter-spacing:.04em;}
+    .btn-gradient{
+      background:linear-gradient(135deg,#f97316,#facc15);
+      border:none;
+      color:#111827;
+      font-weight:600;
+      box-shadow:0 10px 25px rgba(250,204,21,0.35);
+    }
+    .btn-gradient:hover{
+      background:linear-gradient(135deg,#fb923c,#fde047);
+      color:#020617;
+    }
+    .hero-mini{
+      padding:110px 0 40px;
+      background:
+        radial-gradient(circle at top left,rgba(248,250,252,0.05),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(251,191,36,0.18),transparent 55%);
+    }
+    .section-title{font-size:2rem;font-weight:700;}
+    .section-sub{color:#9ca3af;}
+    .product-card{
+      background:linear-gradient(145deg,#020617,#020617 45%,#020617 60%,#020617);
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,0.35);
+      overflow:hidden;
+      transform:translateY(0);
+      transition:all .3s ease;
+    }
+    .product-card:hover{
+      transform:translateY(-6px) scale(1.01);
+      box-shadow:0 18px 40px rgba(15,23,42,0.95);
+      border-color:rgba(234,179,8,0.7);
+    }
+    .product-img{height:210px;object-fit:cover;width:100%;}
+    .price-tag{color:#facc15;font-weight:700;font-size:1.05rem;}
+    .chip{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 10px;border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.5);
+      font-size:.78rem;color:#cbd5f5;
+    }
+    .reveal{opacity:0;transform:translateY(24px);transition:all .7s ease-out;}
+    .reveal.show{opacity:1;transform:translateY(0);}
+    footer{
+      border-top:1px solid rgba(55,65,81,0.8);
+      background:#020617;
+      color:#6b7280;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">BuyPro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="tech.html">Tech</a></li>
+        <li class="nav-item"><a class="nav-link active" href="studygear.html">Study Gear</a></li>
+      </ul>
+      <a class="btn btn-sm btn-gradient ms-lg-3 mt-2 mt-lg-0" href="#study-deals">Study Deals</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-mini">
+  <div class="container">
+    <div class="row align-items-center gy-3">
+      <div class="col-lg-7 reveal">
+        <h1 class="section-title">Study Gear & Workspace</h1>
+        <p class="section-sub mt-2">
+          Desks, chairs, lamps, organisers, and accessories to build a focused, comfortable study setup.
+        </p>
+        <p class="small text-secondary mt-2">
+          As an Amazon Associate, BuyPro earns from qualifying purchases. Check the final price and details on Amazon before you order.
+        </p>
+      </div>
+      <div class="col-lg-5 reveal">
+        <div class="d-flex flex-wrap gap-2">
+          <span class="chip"><i class="bi bi-person-workspace me-1 text-warning"></i>Posture friendly</span>
+          <span class="chip"><i class="bi bi-lightbulb me-1 text-info"></i>Eye‑friendly lighting</span>
+          <span class="chip"><i class="bi bi-box-seam me-1 text-success"></i>Space saving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="study-deals" class="py-4">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Study Product 1 -->
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100">
+          <img src="https://via.placeholder.com/600x400?text=Study+Desk" class="product-img" alt="Study Desk">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="chip"><i class="bi bi-table me-1"></i>Desk</span>
+              <span class="small text-success"><i class="bi bi-check-circle me-1"></i>Compact</span>
+            </div>
+            <h5 class="mb-1">Compact Study Desk</h5>
+            <p class="small text-secondary mb-2">
+              Space‑saving desk with enough room for laptop, books, and notes – ideal for small rooms.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="price-tag">₹X,XXX*</span>
+              <span class="small text-secondary"><i class="bi bi-rulers me-1"></i>Optimised size</span>
+            </div>
+            <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-gradient w-100">
+              View on Amazon
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Study Product 2 -->
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100">
+          <img src="https://via.placeholder.com/600x400?text=Ergonomic+Chair" class="product-img" alt="Study Chair">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="chip"><i class="bi bi-person-standing me-1"></i>Posture</span>
+              <span class="small text-info"><i class="bi bi-activity me-1"></i>Back support</span>
+            </div>
+            <h5 class="mb-1">Ergonomic Study Chair</h5>
+            <p class="small text-secondary mb-2">
+              Adjustable height and lumbar support to reduce back pain in long study sessions.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="price-tag">₹X,XXX*</span>
+              <span class="small text-secondary"><i class="bi bi-wind me-1"></i>Breathable mesh</span>
+            </div>
+            <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-gradient w-100">
+              View on Amazon
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Study Product 3 -->
+      <div class="col-md-4 reveal">
+        <div class="product-card h-100">
+          <img src="https://via.placeholder.com/600x400?text=Study+Lamp" class="product-img" alt="Study Lamp">
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="chip"><i class="bi bi-lightbulb-fill me-1"></i>Lamp</span>
+              <span class="small text-warning"><i class="bi bi-brightness-alt-high me-1"></i>Adjustable</span>
+            </div>
+            <h5 class="mb-1">LED Study Lamp</h5>
+            <p class="small text-secondary mb-2">
+              Adjustable brightness and color temperature to protect your eyes during night study.
+            </p>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="price-tag">₹X,XXX*</span>
+              <span class="small text-secondary"><i class="bi bi-usb-plug me-1"></i>USB powered</span>
+            </div>
+            <a href="YOUR_AMAZON_AFFILIATE_LINK" target="_blank" rel="nofollow noopener" class="btn btn-sm btn-gradient w-100">
+              View on Amazon
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more study products by copying a col-md-4 block -->
+    </div>
+
+    <p class="small text-secondary mt-3">
+      *Prices and availability can change anytime. Confirm the final details directly on Amazon before buying.
+    </p>
+  </div>
+</section>
+
+<footer class="py-3 mt-3">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <span class="small">© <span id="year"></span> BuyPro. All rights reserved.</span>
+    <span class="small">Built for distraction‑free, comfortable study setups.</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const reveals=document.querySelectorAll('.reveal');
+  const revealOnScroll=()=>{const t=window.innerHeight*0.85;reveals.forEach(el=>{const top=el.getBoundingClientRect().top;if(top<t)el.classList.add('show');});};
+  window.addEventListener('scroll',revealOnScroll);
+  window.addEventListener('load',revealOnScroll);
+</script>
+</body>
+</html>
